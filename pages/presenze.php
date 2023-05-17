@@ -445,6 +445,24 @@ option {
     background-color: white;
     color: black;
 }
+
+.btn-primary {
+    background-color: #602483;
+    color: white;
+    border-color: #602483;
+}
+
+.btn-primary:hover {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
+
+.btn-primary:focus {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
 </style>
 
 </html>

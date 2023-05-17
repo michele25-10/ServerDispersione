@@ -79,12 +79,13 @@ session_start();
                         <input type="text" class="form-control " id="inputCity" name="materia" required>
                     </div>
                     <div class="col-md-5">
-                        <label for="inputState" class="form-label">Data di inizio: <span id="obbligatorio">
+                        <label for="inputState" class="form-label">Presunta data di inizio: <span id="obbligatorio">
                                 *</span></label>
                         <input type="date" class="form-control" id="inputCity" name="data_inizio">
                     </div>
                     <div class="col-md-5">
-                        <label for="inputZip" class="form-label">Data di fine: <span id="obbligatorio"> *</span></label>
+                        <label for="inputZip" class="form-label">Presunta data di fine: <span id="obbligatorio">
+                                *</span></label>
                         <input type="date" class="form-control" id="inputCity" name="data_fine">
                     </div>
                     <div class="col-12">
@@ -92,9 +93,9 @@ session_start();
                         <select class="form-select" aria-label="Default select example" name="sede" required>
                             <option selected disabled>Sede:</option>
                             <option value="ITIS Ferruccio Viola">ITIS Ferruccio Viola</option>
-                            <option value="IPSIA">IPSIA</option>
-                            <option value="Agrario">Agrario</option>
-                            <option value="Geometri">Geometri</option>
+                            <option value="IPSIA Giuseppe Marchesini">IPSIA Giuseppe Marchesini</option>
+                            <option value="Istituto Agrario Ottavio Munerati">Istituto Agrario Ottavio Munerati</option>
+                            <option value="ITG Bernini">ITG Bernini</option>
                         </select>
                     </div>
                 </div>
@@ -263,157 +264,9 @@ session_start();
             $(".progress-bar")
                 .css("width", percent + "%")
                 .html(percent + "%");
+            $(".progress-bar").css("background-color", "#602483");
         }
     });
-
-    //Validazione del form
-    /*$(document).ready(function(str) {
-
-        $("#regiration_form").validate({
-            rules: {
-                'tipologia': {
-                    required: true,
-                },
-                'id_quadrimestre': {
-                    required: true,
-                },
-                'materia': {
-                    required: true,
-                },
-                'data_inizio': {
-                    required: true,
-                },
-                'data_fine': {
-                    required: true,
-                },
-                'sede': {
-                    required: true,
-                },
-                'incontro1': {
-                    required: true,
-                },
-                'aula1': {
-                    required: true,
-                },
-                'incontro2': {
-                    required: true,
-                },
-                'aula2': {
-                    required: true,
-                },
-                'incontro3': {
-                    required: true,
-                },
-                'aula3': {
-                    required: true,
-                },
-                'incontro4': {
-                    required: true,
-                },
-                'aula4': {
-                    required: true,
-                },
-                'incontro5': {
-                    required: true,
-                },
-                'aula5': {
-                    required: true,
-                },
-                'alunno1': {
-                    required: false,
-                },
-                'alunno2': {
-                    required: false,
-                },
-                'alunno3': {
-                    required: false,
-                },
-                'alunno4': {
-                    required: false,
-                },
-                'alunno5': {
-                    required: false,
-                },
-                'alunno6': {
-                    required: false,
-                },
-                'alunno7': {
-                    required: false,
-                },
-                'alunno8': {
-                    required: false,
-                },
-                'alunno9': {
-                    required: false,
-                }
-            },
-            messages: {
-                'tipologia': {
-                    required: "Il campo è obbligatorio",
-                },
-                'id_quadrimestre': {
-                    required: "Il campo è obbligatorio",
-                },
-                'materia': {
-                    required: "Il campo è obbligatorio",
-                },
-                'data_inizio': {
-                    required: "Il campo è obbligatorio",
-                },
-                'data_fine': {
-                    required: "Il campo è obbligatorio",
-                },
-                'sede': {
-                    required: "Il campo è obbligatorio",
-                },
-                'incontro1': {
-                    required: "Il campo è obbligatorio",
-                },
-                'incontro2': {
-                    required: "Il campo è obbligatorio",
-                },
-                'incontro3': {
-                    required: "Il campo è obbligatorio",
-                },
-                'incontro4': {
-                    required: "Il campo è obbligatorio",
-                },
-                'incontro5': {
-                    required: "Il campo è obbligatorio",
-                },
-                /*   'alunno1': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno2': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno3': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno4': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno5': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno6': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno7': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno8': {
-                       required: "Il campo è obbligatorio",
-                   },
-                   'alunno9': {
-                       required: "Il campo è obbligatorio",
-                   }
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
-        });
-    });*/
     </script>
 
     <?php
@@ -566,5 +419,23 @@ session_start();
 <style type="text/css">
 #regiration_form fieldset:not(:first-of-type) {
     display: none;
+}
+
+.btn-primary {
+    background-color: #602483;
+    color: white;
+    border-color: #602483;
+}
+
+.btn-primary:hover {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
+
+.btn-primary:focus {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
 }
 </style>

@@ -47,7 +47,8 @@
                         <td><?php echo $row['aula'] ?> </td>
                         <td>
                             <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id'] ?>)">Modifica</button>
+                                data-bs-target="#exampleModal"
+                                onclick="onClick(<?php echo $row['id'] ?>)">Modifica</button>
                             <button class="btn btn-success me-3"
                                 onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id'] ?>&nome_corso=<?php echo $row['id_corso'] ?>';">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -183,5 +184,24 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
 </body>
+<style>
+.btn-primary {
+    background-color: #602483;
+    color: white;
+    border-color: #602483;
+}
+
+.btn-primary:hover {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
+
+.btn-primary:focus {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
+</style>
 
 </html>

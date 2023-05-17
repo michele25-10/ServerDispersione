@@ -20,7 +20,7 @@ session_start();
     <?php require_once(__DIR__ . '/navbar.php'); ?>
     <div class="container">
         <div class="row mt-5">
-            <h2>Inserisci dati docente</h2>
+            <h2>Inserisci dati alunno</h2>
             <form method="post">
         </div>
         <div class="mb-3">
@@ -93,5 +93,25 @@ session_start();
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 </body>
+
+<style>
+.btn-primary {
+    background-color: #602483;
+    color: white;
+    border-color: #602483;
+}
+
+.btn-primary:hover {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
+
+.btn-primary:focus {
+    border-color: #602483;
+    background-color: #602483;
+    color: white;
+}
+</style>
 
 </html>

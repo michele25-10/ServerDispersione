@@ -58,8 +58,8 @@ error_reporting(0);
                                 <td>
                                     <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id_incontro'] ?>)">Modifica</button>
                                     <button class="btn btn-success me-3" onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id_incontro'] ?>&nome_corso=<?php echo $_GET['nome_corso'] ?>';" <?php if ($list_studenti == -1) {
-                                                                                                                                                                                                                            echo "disabled";
-                                                                                                                                                                                                                        } ?>>
+                                                                                                                                                                                                                        echo "disabled";
+                                                                                                                                                                                                                    } ?>>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
                                             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -163,7 +163,7 @@ error_reporting(0);
                         <th>Nome</th>
                         <th>Cognome</th>
                         <th>CF</th>
-                   </tr>
+                    </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($list_studenti as $row) : ?>
@@ -383,5 +383,25 @@ error_reporting(0);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
 </body>
+
+<style>
+    .btn-primary {
+        background-color: #602483;
+        color: white;
+        border-color: #602483;
+    }
+
+    .btn-primary:hover {
+        border-color: #602483;
+        background-color: #602483;
+        color: white;
+    }
+
+    .btn-primary:focus {
+        border-color: #602483;
+        background-color: #602483;
+        color: white;
+    }
+</style>
 
 </html>
