@@ -92,7 +92,7 @@
                                                     Se accetta non si potrà tornare indietro.
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                                     <button type="button" class="btn btn-danger" onclick="eliminaCorso(<?php echo $row['id'] ?>)">Accetto</button>
                                                 </div>
                                             </div>
