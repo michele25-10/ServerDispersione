@@ -70,8 +70,7 @@
                             <th>Insegnante</th>
                             <th>Tutor</th>
                             <th>Materia</th>
-                            <th>Info
-                            <th>
+                            <th>Info</th>
                         </tr>
                     </tfoot>
                 </table>
