@@ -46,7 +46,7 @@ error_reporting(0);
                             <th>Data</th>
                             <th>Note</th>
                             <th>Aula</th>
-                            <th>View More</th>
+                            <th>Opzioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,8 +56,8 @@ error_reporting(0);
                                 <td><?php echo $row['note'] ?></td>
                                 <td><?php echo $row['aula'] ?></td>
                                 <td>
-                                    <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id_incontro'] ?>)">Edit</button>
-                                    <button class="btn btn-secondary me-3" onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id_incontro'] ?>&nome_corso=<?php echo $_GET['nome_corso'] ?>';" <?php if ($list_studenti == -1) {
+                                    <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id_incontro'] ?>)">Modifica</button>
+                                    <button class="btn btn-success me-3" onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id_incontro'] ?>&nome_corso=<?php echo $_GET['nome_corso'] ?>';" <?php if ($list_studenti == -1) {
                                                                                                                                                                                                                             echo "disabled";
                                                                                                                                                                                                                         } ?>>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
@@ -121,7 +121,7 @@ error_reporting(0);
                                     Inserite gli alunni quando avrete la certezza che tutti quanti possano partecipare.
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                     <button type="submit" name="submit" class="btn btn-danger" value="<?php echo $_GET['id'] . " " . $_GET['nome_corso'] ?>">Accetto</button>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@ error_reporting(0);
                         <th>Nome</th>
                         <th>Cognome</th>
                         <th>CF</th>
-                    </tr>
+                   </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($list_studenti as $row) : ?>
@@ -197,7 +197,7 @@ error_reporting(0);
                     Se accetta non si potrà tornare indietro.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                     <button type="button" class="btn btn-danger" onclick="terminaCorso(<?php echo $id ?>)">Accetto</button>
                 </div>
             </div>
@@ -293,7 +293,7 @@ error_reporting(0);
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                         <button type="submit" class="btn btn-primary" id="id" name="id">Invia</button>
                     </div>
                 </form>

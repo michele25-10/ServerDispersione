@@ -30,7 +30,7 @@
                 <tr>
                     <th>Data</th>
                     <th>Numero Studenti</th>
-                    <th> Info </th>
+                    <th> Opzioni </th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +45,7 @@
                     <td>
                         <a
                             href="getInfoStudenti.php?data=<?php echo $row['data'] ?>&nome_corso=<?php echo $row['nome_corso'] ?>">
-                            <button class="btn btn-secondary">
+                            <button class="btn btn-success">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                                     <path
@@ -61,7 +61,7 @@
                 <tr>
                     <th>Data</th>
                     <th>Studenti</th>
-                    <th>Info</th>
+                    <th>Opzioni</th>
                 </tr>
             </tfoot>
         </table>
