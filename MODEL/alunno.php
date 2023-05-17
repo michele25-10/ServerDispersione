@@ -20,4 +20,10 @@ class Alunno
         where c.nome_corso = '" . $nome_corso . "' AND c.status!='2';";
         return $sql;
     }
+
+    function addAlunno($SIDI, $CF, $nome, $cognome,$telefono){
+        $sql ="INSERT INTO alunno(SIDI, C, nome, cognome, telefono)
+        VALUES ('" . $SIDI . "', '" . $CF . "', '" . $nome . "', '" . $cognome . "', " . $telefono . ");";
+        return $sql;
+    }
 }
