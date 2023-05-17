@@ -30,7 +30,7 @@
                         <th>Data Inizio</th>
                         <th>Note</th>
                         <th>Aula</th>
-                        <th>View More</th>
+                        <th>Opzioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +43,7 @@
                         <td>
                             <a
                                 href="presenze.php?id_incontro=<?php echo $row['id'] ?>&nome_corso=<?php echo $row['id_corso'] ?>">
-                                <button class="btn btn-secondary">
+                                <button class="btn btn-success">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
@@ -65,7 +65,7 @@
                         <th>Data Inizio</th>
                         <th>Note</th>
                         <th>Aula</th>
-                        <th>View More</th>
+                        <th>Opzioni</th>
                     </tr>
                 </tfoot>
             </table>
