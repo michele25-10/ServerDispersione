@@ -46,9 +46,9 @@ session_start();
                         <select class="form-select" aria-label="Default select example" name="tipologia" id="tipologia"
                             required>
                             <option selected disabled>Tipologia del corso:</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
+                            <option value="A">A -> 1 x 1 x 10 x 2</option>
+                            <option value="B">B -> 1 x 6 x 12 x 3</option>
+                            <option value="C">C -> 2 x 9 x 12 x 3</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -200,7 +200,8 @@ session_start();
     $("#tipologia")
         .change(function() {
             $("#tipologia option:selected").each(function() {
-                var str = $(this).text();
+                var str = $(this).val();
+                console.log(str);
                 //Se la tipologia del corso è la C allora faccio apparire il select del tutor altrimenti lo rimuovo
                 switch (str) {
                     case "A":
