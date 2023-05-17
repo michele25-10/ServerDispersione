@@ -274,7 +274,7 @@ if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
                             <th>Nome</th>
                             <th>Cognome</th>
                             <th>Stato</th>
-                            <th>Option</th>
+                            <th>Opzioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -307,7 +307,7 @@ if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
                                                                                                                                                             if ($row['status'] == 'Presente') {
                                                                                                                                                                 $status = 0;
                                                                                                                                                             }
-                                                                                                                                                            echo ("onClick(" . $row['id'] . ", " . $status . ")") ?>">Edit</button>
+                                                                                                                                                            echo ("onClick(" . $row['id'] . ", " . $status . ")") ?>">Modifica</button>
                             </td>
                         </tr>
                         <?php endforeach ?>
@@ -336,7 +336,7 @@ if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                         <button type="submit" class="btn btn-primary" id="id" name="id">Invia</button>
                     </div>
                     </form>

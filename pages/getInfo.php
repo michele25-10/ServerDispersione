@@ -121,7 +121,7 @@ error_reporting(0);
                                     Inserite gli alunni quando avrete la certezza che tutti quanti possano partecipare.
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                                     <button type="submit" name="submit" class="btn btn-danger" value="<?php echo $_GET['id'] . " " . $_GET['nome_corso'] ?>">Accetto</button>
                                 </div>
                             </div>
@@ -197,7 +197,7 @@ error_reporting(0);
                     Se accetta non si potrà tornare indietro.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                     <button type="button" class="btn btn-danger" onclick="terminaCorso(<?php echo $id ?>)">Accetto</button>
                 </div>
             </div>
@@ -293,7 +293,7 @@ error_reporting(0);
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
                         <button type="submit" class="btn btn-primary" id="id" name="id">Invia</button>
                     </div>
                 </form>
