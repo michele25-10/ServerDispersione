@@ -47,7 +47,7 @@
                         <td><?php echo $row['aula'] ?> </td>
                         <td>
                             <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id'] ?>)">Edit</button>
+                                data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id'] ?>)">Modifica</button>
                             <button class="btn btn-success me-3"
                                 onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id'] ?>&nome_corso=<?php echo $row['id_corso'] ?>';">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
