@@ -53,7 +53,7 @@ if (empty($_GET['nome_corso'])) {
                             <th>Data</th>
                             <th>Note</th>
                             <th>Aula</th>
-                            <th>View More</th>
+                            <th>Opzioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,7 +62,7 @@ if (empty($_GET['nome_corso'])) {
                             <td><?php echo $row['data_inizio'] ?></td>
                             <td><?php echo $row['note'] ?></td>
                             <td><?php echo $row['aula'] ?></td>
-                            <td> <button class="btn btn-secondary me-3"
+                            <td> <button class="btn btn-success me-3"
                                     onclick="window.location.href='getRegistroStorico.php?id_incontro=<?php echo $row['id_incontro'] ?>&nome_corso=<?php echo $_GET['nome_corso'] ?>';">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">

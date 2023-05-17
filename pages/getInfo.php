@@ -46,7 +46,7 @@ error_reporting(0);
                             <th>Data</th>
                             <th>Note</th>
                             <th>Aula</th>
-                            <th>View More</th>
+                            <th>Opzione</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,7 +57,7 @@ error_reporting(0);
                                 <td><?php echo $row['aula'] ?></td>
                                 <td>
                                     <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id_incontro'] ?>)">Edit</button>
-                                    <button class="btn btn-secondary me-3" onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id_incontro'] ?>&nome_corso=<?php echo $_GET['nome_corso'] ?>';" <?php if ($list_studenti == -1) {
+                                    <button class="btn btn-success me-3" onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id_incontro'] ?>&nome_corso=<?php echo $_GET['nome_corso'] ?>';" <?php if ($list_studenti == -1) {
                                                                                                                                                                                                                             echo "disabled";
                                                                                                                                                                                                                         } ?>>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
@@ -163,6 +163,7 @@ error_reporting(0);
                         <th>Nome</th>
                         <th>Cognome</th>
                         <th>CF</th>
+                        <th>Opzione</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -35,7 +35,7 @@
                         <th>Data Inizio</th>
                         <th>Note</th>
                         <th>Aula</th>
-                        <th>View More</th>
+                        <th>Opzioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,7 +48,7 @@
                         <td>
                             <button id="edit" class="btn btn-primary me-3" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick="onClick(<?php echo $row['id'] ?>)">Edit</button>
-                            <button class="btn btn-secondary me-3"
+                            <button class="btn btn-success me-3"
                                 onclick="window.location.href='presenze.php?id_incontro=<?php echo $row['id'] ?>&nome_corso=<?php echo $row['id_corso'] ?>';">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
@@ -69,7 +69,7 @@
                         <th>Nome corso</th>
                         <th>Data Inizio</th>
                         <th>Note</th>
-                        <th>View More</th>
+                        <th>Opzione</th>
                     </tr>
                 </tfoot>
             </table>
