@@ -43,7 +43,7 @@ if (empty($_GET['type'])) {
                         <th>Docente</th>
                         <th>Tutor</th>
                         <th>Materia</th>
-                        <th>View More</th>
+                        <th>Info</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,7 @@ if (empty($_GET['type'])) {
                         <td>
                             <a
                                 href="getInfo.php?id=<?php echo $row['id'] ?>&nome_corso=<?php echo $row['nome_corso'] ?>">
-                                <button class="btn btn-secondary">
+                                <button class="btn btn-success">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                                         <path
@@ -82,6 +82,7 @@ if (empty($_GET['type'])) {
                         <th>Insegnante</th>
                         <th>Tutor</th>
                         <th>Materia</th>
+                        <th>Info</th>
                     </tr>
                 </tfoot>
             </table>
