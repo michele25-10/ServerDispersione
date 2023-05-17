@@ -21,8 +21,9 @@ class Alunno
         return $sql;
     }
 
-    function addAlunno($SIDI, $CF, $nome, $cognome,$telefono){
-        $sql ="INSERT INTO alunno(SIDI, C, nome, cognome, telefono)
+    function addAlunno($SIDI, $CF, $nome, $cognome, $telefono)
+    {
+        $sql = "INSERT INTO alunno(SIDI, CF, nome, cognome, telefono)
         VALUES ('" . $SIDI . "', '" . $CF . "', '" . $nome . "', '" . $cognome . "', " . $telefono . ");";
         return $sql;
     }
