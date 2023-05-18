@@ -10,7 +10,7 @@
 </head>
 <nav class="navbar navbar-expand-lg" style='background-color: #602483'>
   <div class="container-fluid">
-    <img src="https://dispersione.violamarchesini.it/assets/viola-logo.svg" alt="Logo" width="150" height="75">
+    <img src="https://dispersione.violamarchesini.it/assets/viola-logo.png" alt="Logo" width="150" height="75">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
