@@ -27,4 +27,20 @@ class Alunno
         VALUES ('" . $SIDI . "', '" . $CF . "', '" . $nome . "', '" . $cognome . "', " . $telefono . ");";
         return $sql;
     }
+
+    function getStudentByCF($CF)
+    {
+        $sql = "SELECT nome, cognome, SIDI, telefono
+                FROM alunno
+                WHERE CF = '" . $CF . "';";
+        return $sql;
+    }
+
+    function updateAlunno($id, $nome, $cognome, $SIDI, $telefono)
+    {
+        $sql = "UPDATE alunno
+        SET nome = '" . $nome . "', cognome = '" . $cognome . "', SIDI = '" . $SIDI . "', telefono = '" . $telefono . "'
+        WHERE CF='" . $id . "'; ";
+        return $sql;
+    }
 }

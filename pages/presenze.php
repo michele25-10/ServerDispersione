@@ -3,13 +3,13 @@ include_once dirname(__FILE__) . '/../function/presenze.php';
 include_once dirname(__FILE__) . '/../function/alunno.php';
 
 if (empty($_GET['id_incontro'])) {
-    header('location: ../index.php');
+    header('location: homepage.php');
 }
 if (empty($_GET['nome_corso'])) {
-    header('location: ../index.php');
+    header('location: homepage.php');
 }
 if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
-    header('location: ../index.php');
+    header('location: homepage.php');
 }
 ?>
 
@@ -20,6 +20,7 @@ if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Presenze corso</title>
+    <link rel="stylesheet" href="../assets/style.css">
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -248,7 +249,7 @@ if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
             $res = addPresenze($data);
             if ($res == true) {
                 echo '<script>window . location . replace(
-                "https://dispersione.violamarchesini.it/"
+                "https://dispersione.violamarchesini.it/pages/homepage.php"
             );</script>';
             }
         }
@@ -444,24 +445,6 @@ if (getStudentByCorsoName($_GET['nome_corso']) == -1) {
 option {
     background-color: white;
     color: black;
-}
-
-.btn-primary {
-    background-color: #602483;
-    color: white;
-    border-color: #602483;
-}
-
-.btn-primary:hover {
-    border-color: #602483;
-    background-color: #602483;
-    color: white;
-}
-
-.btn-primary:focus {
-    border-color: #602483;
-    background-color: #602483;
-    color: white;
 }
 </style>
 

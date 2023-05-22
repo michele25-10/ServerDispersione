@@ -9,6 +9,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Diario | Aggiungi docente</title>
+    <link rel="stylesheet" href="../assets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,25 +88,5 @@ session_start();
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 </body>
-
-<style>
-.btn-primary {
-    background-color: #602483;
-    color: white;
-    border-color: #602483;
-}
-
-.btn-primary:hover {
-    border-color: #602483;
-    background-color: #602483;
-    color: white;
-}
-
-.btn-primary:focus {
-    border-color: #602483;
-    background-color: #602483;
-    color: white;
-}
-</style>
 
 </html>

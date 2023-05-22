@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Corsi per tipologia</title>
+    <link rel="stylesheet" href="../assets/style.css">
     <link href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.4/datatables.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
@@ -198,30 +199,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
 </body>
-<style>
-    .btn-primary {
-        background-color: #602483;
-        color: white;
-        border-color: #602483;
-    }
-
-    .btn-primary:hover {
-        border-color: #602483;
-        background-color: #602483;
-        color: white;
-    }
-
-    .btn-primary:focus {
-        border-color: #602483;
-        background-color: #602483;
-        color: white;
-    }
-
-    tfoot input {
-        width: 100%;
-        padding: 3px;
-        box-sizing: border-box;
-    }
-</style>
 
 </html>
