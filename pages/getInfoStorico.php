@@ -1,3 +1,9 @@
+<script>
+    if (sessionStorage.getItem('user_id') == undefined) {
+        window.location.replace('https://dispersione.violamarchesini.it/');
+    }
+</script>
+
 <?php
 if (empty($_GET['id'])) {
     header('location: homepage.php');

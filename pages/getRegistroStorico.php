@@ -1,3 +1,9 @@
+<script>
+    if (sessionStorage.getItem('user_id') == undefined) {
+        window.location.replace('https://dispersione.violamarchesini.it/');
+    }
+</script>
+
 <?php
 include_once dirname(__FILE__) . '/../function/presenze.php';
 if (empty($_GET['id_incontro'])) {
