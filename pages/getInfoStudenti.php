@@ -31,7 +31,7 @@
         $list_partecipanti = getStudentsIncontro($newDate);
         $nome = $_GET['nome_corso'];
         echo ('<br>
-        <h2>Studenti che partecipano al corso ' . $nome . ' in data ' . $date . ':</h2>
+        <h2>Studenti che partecipano ai corsi in data ' . $date . ':</h2>
         <br>');
         if ($list_partecipanti != -1) : ?>
             <table id="example" class="display" style="width:100%">
@@ -39,6 +39,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Cognome</th>
+                        <th>Menu</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +51,9 @@
                             <td>
                                 <?php echo $row['cognome'] ?>
                             </td>
+                            <td>
+                                <?php echo $row['menu'] ?>
+                            </td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
@@ -57,6 +61,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Cognome</th>
+                        <th>Menu</th>
                     </tr>
                 </tfoot>
             </table>

@@ -3,31 +3,28 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include_once dirname(__FILE__) . '/../../COMMON/connect.php';
-include_once dirname(__FILE__) . '/../../MODEL/alunno.php';
+include_once dirname(__FILE__) . '/../../MODEL/menu.php';
 
 $dtbase = new Database();
 $conn = $dtbase->connect();
 
-$alunno = new Alunno($conn);
-$query = $alunno->getArchieveAlunni();
+$league = new Menu($conn);
+$query = $league->getArchieveMenu();
 $result = $conn->query($query);
 
 if (mysqli_num_rows($result) > 0) {
-    $als_arr = array();
+    $leagues_arr = array();
     while ($row = $result->fetch_assoc()) {
         extract($row);
-        $al_arr = array(
-            'SIDI' => $SIDI,
-            'CF' => $CF,
-            'nome' => $nome,
-            'cognome' => $cognome,
-            'telefono' => $telefono,
-            'menu' => $menu,
+        $league_arr = array(
+            'id' => $id,
+            'tipologia' => $tipologia,
+            'descrizione' => $descrizione,
         );
-        array_push($als_arr, $al_arr);
+        array_push($leagues_arr, $league_arr);
     }
     http_response_code(200);
-    echo (json_encode($als_arr, JSON_PRETTY_PRINT));
+    echo (json_encode($leagues_arr, JSON_PRETTY_PRINT));
 } else {
     http_response_code(400);
     echo json_encode("-1");
