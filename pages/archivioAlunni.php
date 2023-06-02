@@ -1,7 +1,7 @@
 <script>
-    if (sessionStorage.getItem('user_id') == undefined) {
-        window.location.replace('https://dispersione.violamarchesini.it/');
-    }
+if (sessionStorage.getItem('user_id') == undefined) {
+    window.location.replace('https://dispersione.violamarchesini.it/');
+}
 </script>
 
 <?php
@@ -17,7 +17,8 @@ session_start();
     <title>Diario | Archivio Alunni</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 
@@ -33,19 +34,20 @@ session_start();
 
     <div class="container mt-5">
         <h2>Archivio degli alunni:</h2>
-        <table id="example" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>SIDI</th>
-                    <th>Telefono</th>
-                    <th>Menù</th>
-                    <th>Opzioni</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($list as $row) : ?>
+        <div style="overflow: auto; overflow-y: hidden">
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>SIDI</th>
+                        <th>Telefono</th>
+                        <th>Menù</th>
+                        <th>Opzioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($list as $row) : ?>
                     <tr>
                         <td><?php echo ($row['nome']) ?></td>
                         <td><?php echo ($row['cognome']) ?></td>
@@ -53,25 +55,29 @@ session_start();
                         <td><?php echo ($row['telefono']) ?></td>
                         <td><?php echo $row['menu']; ?></td>
                         <td>
-                            <button id="edit" class="btn btn-primary me-1 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick('<?php echo $row['CF'] ?>')">Edit</button>
+                            <button id="edit" class="btn btn-primary me-1 mb-2" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                onclick="onClick('<?php echo $row['CF'] ?>')">Edit</button>
                         </td>
                     </tr>
-                <?php endforeach ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>SIDI</th>
-                    <th>Telefono</th>
-                    <th>Menù</th>
-                    <th>Opzioni</th>
-                </tr>
-            </tfoot>
-        </table>
+                    <?php endforeach ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>SIDI</th>
+                        <th>Telefono</th>
+                        <th>Menù</th>
+                        <th>Opzioni</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 
-    <div class=" modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class=" modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -98,12 +104,13 @@ session_start();
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Tipo di menù:</label>
-                            <select id="menu" class="form-select" aria-label="Default select example" name="menu" required>
+                            <select id="menu" class="form-select" aria-label="Default select example" name="menu"
+                                required>
                                 <option selected disabled>Tipo di menù:</option>
                                 <option value="Classico">Classico</option>
                                 <?php foreach ($menu as $row) : ?>
-                                    <option value="<?php echo $row['id'] ?>">
-                                        <?php echo ($row['tipologia']) ?></option>
+                                <option value="<?php echo $row['id'] ?>">
+                                    <?php echo ($row['tipologia']) ?></option>
                                 <?php endforeach ?>
                             </select>
                         </div>
@@ -117,56 +124,56 @@ session_start();
         </div>
 
         <script>
-            function onClick(CF) {
-                let endpoint = 'https://dispersione.violamarchesini.it/API/alunno/getAlunnoByCF.php?CF=' + CF
-                $.get(endpoint, function(data, status) {
-                    $('#nome').val(data[0][
-                        'nome'
-                    ]);
-                    $('#cognome').val(data[0][
-                        'cognome'
-                    ]);
-                    $('#SIDI').val(data[0][
-                        'SIDI'
-                    ]);
-                    $('#telefono').val(data[0][
-                        'telefono'
-                    ]);
-                    $('#id').val(data[0][
-                        'CF'
-                    ]);
-                    $('#menu option[value=' + data[0]['menu'] + ']').prop('selected', true);
-                })
-            }
+        function onClick(CF) {
+            let endpoint = 'https://dispersione.violamarchesini.it/API/alunno/getAlunnoByCF.php?CF=' + CF
+            $.get(endpoint, function(data, status) {
+                $('#nome').val(data[0][
+                    'nome'
+                ]);
+                $('#cognome').val(data[0][
+                    'cognome'
+                ]);
+                $('#SIDI').val(data[0][
+                    'SIDI'
+                ]);
+                $('#telefono').val(data[0][
+                    'telefono'
+                ]);
+                $('#id').val(data[0][
+                    'CF'
+                ]);
+                $('#menu option[value=' + data[0]['menu'] + ']').prop('selected', true);
+            })
+        }
 
-            $(document).ready(function() {
-                // Setup - add a text input to each footer cell
-                $('#example tfoot th').each(function() {
-                    var title = $(this).text();
-                    if (title != "Opzioni") {
-                        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-                    }
-                });
-
-                // DataTable
-                var table = $('#example').DataTable({
-                    initComplete: function() {
-                        // Apply the search
-                        this.api()
-                            .columns()
-                            .every(function() {
-                                var that = this;
-
-                                $('input', this.footer()).on('keyup change clear',
-                                    function() {
-                                        if (that.search() !== this.value) {
-                                            that.search(this.value).draw();
-                                        }
-                                    });
-                            });
-                    },
-                });
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each(function() {
+                var title = $(this).text();
+                if (title != "Opzioni") {
+                    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+                }
             });
+
+            // DataTable
+            var table = $('#example').DataTable({
+                initComplete: function() {
+                    // Apply the search
+                    this.api()
+                        .columns()
+                        .every(function() {
+                            var that = this;
+
+                            $('input', this.footer()).on('keyup change clear',
+                                function() {
+                                    if (that.search() !== this.value) {
+                                        that.search(this.value).draw();
+                                    }
+                                });
+                        });
+                },
+            });
+        });
         </script>
 
         <?php
@@ -198,7 +205,8 @@ session_start();
         ?>
 
         <script src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.4/datatables.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
 </body>
 
