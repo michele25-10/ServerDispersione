@@ -191,7 +191,7 @@ session_start();
 
             if ($res == 1) {
                 echo '<script>window . location . replace(
-            "http://localhost/DiarioProf/frontend/pages/archivioAlunni.php"
+            "https://dispersione.violamarchesini.it/pages/archivioAlunni.php"
             );</script>';
             }
         }
