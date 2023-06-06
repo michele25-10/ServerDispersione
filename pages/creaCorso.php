@@ -297,109 +297,170 @@ session_start();
                     $_POST['id_docente'] = "-1";
                 }
 
+                $check = 0;
+
                 switch ($_POST['tipologia']) {
                     case 'A':
-                        $data_corso = array(
-                            "tipologia" => $_POST['tipologia'],
-                            "id_quadrimestre" => $_POST['id_quadrimestre'],
-                            "id_docente" => $_POST['id_docente'],
-                            "id_tutor" => "-1",
-                            "materia" => $_POST['materia'],
-                            "data_inizio" => $_POST['data_inizio'],
-                            "data_fine" => $_POST['data_fine'],
-                            "nome_corso" => $nome_corso,
-                            "sede" => $_POST['sede'],
-                        );
-
-                        //Inserisco il corso nel db
-                        $res = addCorso($data_corso);
-                        if ($res == -1) {
-                            echo ('<p class="text-danger"><b>Errore inserimento corso!</b></p>');
+                        $incontri = array();
+                        for ($i = 1; $i < 6; $i++) {
+                            $data = explode('T', $_POST['incontro' . $i]);
+                            array_push($incontri, $data[0]);
                         }
 
-                        //Ricavo l'id del corso
-                        $id_corso = getCorsoByNomeCorso($data_corso["nome_corso"]);
+                        $conteggio = array();
+                        $conteggio = array_count_values($incontri); //conta quante volte è presente nell'array quel valore
 
-                        //Inserisco gli incontri nel database
-                        for ($x = 1; $x < 6; $x++) {
-                            $res = addIncontro($id_corso, $_POST["incontro" . $x], $_POST["aula" . $x]);
+                        foreach ($conteggio as $value) {
+                            if ($value > 1) {
+                                echo ('<div class="container mt-2"><p class="text-danger"><b>Non si possono inserire due incontri nella stessa data!</b></p></div>');
+                                $check = 1;
+                                break;
+                            }
                         }
 
-                        //Inserimento degli alunni presenti nel corso nel db
-                        //$res = addAlunnoToCorso($id_corso, $_POST["alunno1"]);
+                        if ($check != 1) {
+                            $data_corso = array(
+                                "tipologia" => $_POST['tipologia'],
+                                "id_quadrimestre" => $_POST['id_quadrimestre'],
+                                "id_docente" => $_POST['id_docente'],
+                                "id_tutor" => "-1",
+                                "materia" => $_POST['materia'],
+                                "data_inizio" => $_POST['data_inizio'],
+                                "data_fine" => $_POST['data_fine'],
+                                "nome_corso" => $nome_corso,
+                                "sede" => $_POST['sede'],
+                            );
 
+                            //Inserisco il corso nel db
+                            $res = addCorso($data_corso);
+                            if ($res == -1) {
+                                echo ('<p class="text-danger"><b>Errore inserimento corso!</b></p>');
+                            }
+
+                            //Ricavo l'id del corso
+                            $id_corso = getCorsoByNomeCorso($data_corso["nome_corso"]);
+
+                            //Inserisco gli incontri nel database
+                            for ($x = 1; $x < 6; $x++) {
+                                $res = addIncontro($id_corso, $_POST["incontro" . $x], $_POST["aula" . $x]);
+                            }
+
+                            //Inserimento degli alunni presenti nel corso nel db
+                            //$res = addAlunnoToCorso($id_corso, $_POST["alunno1"]);
+                            break;
+                        }
+                        $check = 0;
                         break;
 
                     case 'B':
-                        $data_corso = array(
-                            "tipologia" => $_POST['tipologia'],
-                            "id_quadrimestre" => $_POST['id_quadrimestre'],
-                            "id_docente" => $_POST['id_docente'],
-                            "id_tutor" => "-1",
-                            "materia" => $_POST['materia'],
-                            "data_inizio" => $_POST['data_inizio'],
-                            "data_fine" => $_POST['data_fine'],
-                            "nome_corso" => $nome_corso,
-                            "sede" => $_POST['sede'],
-                        );
-
-                        //Inserisco il corso nel db
-                        $res = addCorso($data_corso);
-                        if ($res == -1) {
-                            echo ('<p class="text-danger"><b>Errore inserimento corso!</b></p>');
+                        $incontri = array();
+                        for ($i = 1; $i < 5; $i++) {
+                            $data = explode('T', $_POST['incontro' . $i]);
+                            array_push($incontri, $data[0]);
                         }
 
-                        //Ricavo l'id del corso
-                        $id_corso = getCorsoByNomeCorso($data_corso["nome_corso"]);
+                        $conteggio = array();
+                        $conteggio = array_count_values($incontri); //conta quante volte è presente nell'array quel valore
 
-                        //Inserisco gli incontri nel database
-                        for ($x = 1; $x < 5; $x++) {
-                            $res = addIncontro($id_corso, $_POST["incontro" . $x], $_POST["aula" . $x]);
+                        foreach ($conteggio as $value) {
+                            if ($value > 1) {
+                                echo ('<div class="container mt-2"><p class="text-danger"><b>Non si possono inserire due incontri nella stessa data!</b></p></div>');
+                                $check = 1;
+                                break;
+                            }
                         }
+                        if ($check != 1) {
+                            $data_corso = array(
+                                "tipologia" => $_POST['tipologia'],
+                                "id_quadrimestre" => $_POST['id_quadrimestre'],
+                                "id_docente" => $_POST['id_docente'],
+                                "id_tutor" => "-1",
+                                "materia" => $_POST['materia'],
+                                "data_inizio" => $_POST['data_inizio'],
+                                "data_fine" => $_POST['data_fine'],
+                                "nome_corso" => $nome_corso,
+                                "sede" => $_POST['sede'],
+                            );
 
-                        //Inserimento degli alunni presenti nel corso nel db
-                        /*for ($x = 1; $x < 7; $x++) {
-                        $res = addAlunnoToCorso($id_corso, $_POST["alunno" . $x]);
-                    }*/
+                            //Inserisco il corso nel db
+                            $res = addCorso($data_corso);
+                            if ($res == -1) {
+                                echo ('<p class="text-danger"><b>Errore inserimento corso!</b></p>');
+                            }
+
+                            //Ricavo l'id del corso
+                            $id_corso = getCorsoByNomeCorso($data_corso["nome_corso"]);
+
+                            //Inserisco gli incontri nel database
+                            for ($x = 1; $x < 5; $x++) {
+                                $res = addIncontro($id_corso, $_POST["incontro" . $x], $_POST["aula" . $x]);
+                            }
+
+                            //Inserimento degli alunni presenti nel corso nel db
+                            /*for ($x = 1; $x < 7; $x++) {
+                            $res = addAlunnoToCorso($id_corso, $_POST["alunno" . $x]);
+                            }*/
+                            break;
+                        }
+                        $check = 0;
                         break;
 
                     case 'C':
-                        if (empty($_POST['id_tutor'])) {
-                            $_POST['id_tutor'] = "-1";
+                        $incontri = array();
+                        for ($i = 1; $i < 5; $i++) {
+                            $data = explode('T', $_POST['incontro' . $i]);
+                            array_push($incontri, $data[0]);
                         }
 
-                        $data_corso = array(
-                            "tipologia" => $_POST['tipologia'],
-                            "id_quadrimestre" => $_POST['id_quadrimestre'],
-                            "id_docente" => $_POST['id_docente'],
-                            "id_tutor" => $_POST['id_tutor'],
-                            "materia" => $_POST['materia'],
-                            "data_inizio" => $_POST['data_inizio'],
-                            "data_fine" => $_POST['data_fine'],
-                            "nome_corso" => $nome_corso,
-                            "sede" => $_POST['sede'],
-                        );
+                        $conteggio = array();
+                        $conteggio = array_count_values($incontri); //conta quante volte è presente nell'array quel valore
 
-
-                        //Inserisco il corso nel db
-                        $res = addCorso($data_corso);
-                        if ($res == -1) {
-                            echo ('<p class="text-danger"><b>Errore inserimento corso!</b></p>');
+                        foreach ($conteggio as $value) {
+                            if ($value > 1) {
+                                echo ('<div class="container mt-2"><p class="text-danger"><b>Non si possono inserire due incontri nella stessa data!</b></p></div>');
+                                $check = 1;
+                                break;
+                            }
                         }
+                        if ($check != 1) {
+                            if (empty($_POST['id_tutor'])) {
+                                $_POST['id_tutor'] = "-1";
+                            }
 
-                        //Ricavo l'id del corso
-                        $id_corso = getCorsoByNomeCorso($data_corso["nome_corso"]);
+                            $data_corso = array(
+                                "tipologia" => $_POST['tipologia'],
+                                "id_quadrimestre" => $_POST['id_quadrimestre'],
+                                "id_docente" => $_POST['id_docente'],
+                                "id_tutor" => $_POST['id_tutor'],
+                                "materia" => $_POST['materia'],
+                                "data_inizio" => $_POST['data_inizio'],
+                                "data_fine" => $_POST['data_fine'],
+                                "nome_corso" => $nome_corso,
+                                "sede" => $_POST['sede'],
+                            );
 
-                        //Inserisco gli incontri nel database
-                        for ($x = 1; $x < 5; $x++) {
-                            $res = addIncontro($id_corso, $_POST["incontro" . $x], $_POST["aula" . $x]);
+
+                            //Inserisco il corso nel db
+                            $res = addCorso($data_corso);
+                            if ($res == -1) {
+                                echo ('<p class="text-danger"><b>Errore inserimento corso!</b></p>');
+                            }
+
+                            //Ricavo l'id del corso
+                            $id_corso = getCorsoByNomeCorso($data_corso["nome_corso"]);
+
+                            //Inserisco gli incontri nel database
+                            for ($x = 1; $x < 5; $x++) {
+                                $res = addIncontro($id_corso, $_POST["incontro" . $x], $_POST["aula" . $x]);
+                            }
+
+                            //Inserimento degli alunni presenti nel corso nel db
+                            /*for ($x = 1; $x < 10; $x++) {
+                            $res = addAlunnoToCorso($id_corso, $_POST["alunno" . $x]);
+                            }*/
+                            break;
                         }
-
-                        //Inserimento degli alunni presenti nel corso nel db
-                        /*for ($x = 1; $x < 10; $x++) {
-                        $res = addAlunnoToCorso($id_corso, $_POST["alunno" . $x]);
-                    }*/
-
+                        $check = 0;
                         break;
                 }
             } else {
