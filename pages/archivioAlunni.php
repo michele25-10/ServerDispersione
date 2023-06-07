@@ -43,6 +43,7 @@ session_start();
                         <th>SIDI</th>
                         <th>Telefono</th>
                         <th>Menù</th>
+                        <th>Rischio</th>
                         <th>Opzioni</th>
                     </tr>
                 </thead>
@@ -54,6 +55,7 @@ session_start();
                         <td><?php echo ($row['SIDI']) ?></td>
                         <td><?php echo ($row['telefono']) ?></td>
                         <td><?php echo $row['menu']; ?></td>
+                        <td><?php echo $row['rischio']; ?></td>
                         <td>
                             <button id="edit" class="btn btn-primary me-1 mb-2" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"
@@ -69,6 +71,7 @@ session_start();
                         <th>SIDI</th>
                         <th>Telefono</th>
                         <th>Menù</th>
+                        <th>Rischio</th>
                         <th>Opzioni</th>
                     </tr>
                 </tfoot>
@@ -114,6 +117,10 @@ session_start();
                                 <?php endforeach ?>
                             </select>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Rischio:</label>
+                            <input type="text" id="rischio" name="rischio" class="form-control"></input>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -143,6 +150,9 @@ session_start();
                     'CF'
                 ]);
                 $('#menu option[value=' + data[0]['menu'] + ']').prop('selected', true);
+                $('#rischio').val(data[0][
+                    'rischio'
+                ]);
             })
         }
 
@@ -191,7 +201,8 @@ session_start();
                 "cognome" => $_POST['cognome'],
                 "SIDI" => $_POST['SIDI'],
                 "telefono" => $_POST['telefono'],
-                "menu" => $menu
+                "menu" => $menu,
+                "rischio" => $_POST['rischio'],
             );
 
             $res = updateAlunno($data);

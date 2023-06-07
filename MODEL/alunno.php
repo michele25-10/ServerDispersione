@@ -8,7 +8,7 @@ class Alunno
     }
     function getArchieveAlunni()
     {
-        $sql = "SELECT  a.SIDI, a.CF, a.nome, a.cognome, a.telefono, a.rischioif(a.id_menu is null or a.id_menu = '-1', 'Classico', m.tipologia) as 'menu'
+        $sql = "SELECT  a.SIDI, a.CF, a.nome, a.cognome, a.telefono,  if(a.id_menu is null or a.id_menu = '-1', 'Classico', m.tipologia) as 'menu', a.rischio
         from alunno a
         left join menu m on m.id = a.id_menu;";
         return $sql;
@@ -32,7 +32,7 @@ class Alunno
 
     function getStudentByCF($CF)
     {
-        $sql = "SELECT a.nome, a.cognome, a.SIDI, a.telefono, a.rischio if(a.id_menu is null or a.id_menu = '-1', 'Classico', a.id_menu) as 'menu' 
+        $sql = "SELECT a.nome, a.cognome, a.SIDI, a.telefono, if(a.id_menu is null or a.id_menu = '-1', 'Classico', a.id_menu) as 'menu' ,  a.rischio
                 FROM alunno a
                 left join menu m on m.id = a.id_menu
                 WHERE CF = '" . $CF . "';";
@@ -46,4 +46,7 @@ class Alunno
         WHERE CF='" . $id . "'; ";
         return $sql;
     }
+    UPDATE alunno
+        SET nome = 'Alessio', cognome = 'Donini', SIDI = 'gdshdghsgd', telefono = '156153615', id_menu = '1', rischio = '1'
+        WHERE CF='CHGSDVBD156';
 }

@@ -19,7 +19,7 @@ $league = new Alunno($conn);
 
 $query = $league->updateAlunno($data->id, $data->nome, $data->cognome, $data->SIDI, $data->telefono, $data->menu , $data->rischio);
 $result = $conn->query($query);
-
+var_dump($result);
 if ($result != false) {
     http_response_code(200);
     echo json_encode(["message" => true]);
