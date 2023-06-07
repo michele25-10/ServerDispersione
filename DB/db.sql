@@ -78,3 +78,5 @@ alter table presenze add constraint fk_presenze_incontro foreign key (id_incontr
 alter table presenze add constraint fk_presenze_alunni foreign key (id_alunno) references alunno(CF);
 
 alter table incontro add constraint fk_incontro_aula foreign key (id_aula) references aula(id);
+
+ALTER TABLE `alunno` ADD `rischio` INT NOT NULL DEFAULT '0' ;
