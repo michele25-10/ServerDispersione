@@ -25,7 +25,8 @@ if (mysqli_num_rows($result) > 0) {
         $league_arr = array(
             'nome' => $nome,
             'cognome' => $cognome,
-            'CF' => $CF
+            'CF' => $CF,
+            'rischio' => $rischio
         );
         array_push($leagues_arr, $league_arr);
     }

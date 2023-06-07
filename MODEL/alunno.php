@@ -23,10 +23,10 @@ class Alunno
         return $sql;
     }
 
-    function addAlunno($SIDI, $CF, $nome, $cognome, $telefono,$rischio)
+    function addAlunno($SIDI, $CF, $nome, $cognome, $telefono)
     {
-        $sql = "INSERT INTO alunno(SIDI, CF, nome, cognome, telefono, rischio)
-        VALUES ('" . $SIDI . "', '" . $CF . "', '" . $nome . "', '" . $cognome . "', " . $telefono . "', " . $rischio . ");";
+        $sql = "INSERT INTO alunno(SIDI, CF, nome, cognome, telefono)
+        VALUES ('" . $SIDI . "', '" . $CF . "', '" . $nome . "', '" . $cognome . "', " . $telefono . ");";
         return $sql;
     }
 
@@ -46,7 +46,4 @@ class Alunno
         WHERE CF='" . $id . "'; ";
         return $sql;
     }
-    UPDATE alunno
-        SET nome = 'Alessio', cognome = 'Donini', SIDI = 'gdshdghsgd', telefono = '156153615', id_menu = '1', rischio = '1'
-        WHERE CF='CHGSDVBD156';
 }

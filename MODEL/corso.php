@@ -86,7 +86,7 @@ class Corso
 
     function getInfoCorsoStudent($id)
     {
-        $sql = " SELECT a.nome, a.cognome, a.CF
+        $sql = " SELECT a.nome, a.cognome, a.CF, a.rischio
         FROM corso c
         inner join iscrizione i2 on c.id = i2.id_corso
         inner join alunno a on i2.id_alunno = a.CF

@@ -184,6 +184,7 @@ error_reporting(0);
                         <th>Nome</th>
                         <th>Cognome</th>
                         <th>CF</th>
+                        <th>Rischio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -192,6 +193,7 @@ error_reporting(0);
                             <td><?php echo $row['nome'] ?></td>
                             <td><?php echo $row['cognome'] ?></td>
                             <td><?php echo $row['CF'] ?></td>
+                            <td><?php echo $row['rischio'] ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

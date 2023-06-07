@@ -185,7 +185,8 @@ function getInfoCorsoStudent($id)
                 $corsi_record = array(
                     'nome' => $corsi['nome'],
                     'cognome' => $corsi['cognome'],
-                    'CF'  => $corsi['CF']
+                    'CF'  => $corsi['CF'],
+                    'rischio' => $corsi['rischio'],
                 );
                 array_push($corsi_arr, $corsi_record);
             }

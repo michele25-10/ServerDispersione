@@ -6,7 +6,7 @@ header("Content-type: application/json; charset=UTF-8");
 
 $data = json_decode(file_get_contents("php://input"));
 
-if (empty($data->SIDI) || empty($data->CF) || empty($data->nome) || empty($data->cognome) || empty($data->telefono)|| empty($data->rischio)) {
+if (empty($data->SIDI) || empty($data->CF) || empty($data->nome) || empty($data->cognome) || empty($data->telefono)) {
     http_response_code(400);
     echo json_encode(["message" => "Fill every field"]);
     die();
@@ -17,7 +17,7 @@ $conn = $db->connect();
 
 $league = new Alunno($conn);
 
-$query = $league->addAlunno($data->SIDI, $data->CF, $data->nome, $data->cognome, $data->telefono, $data->rischio);
+$query = $league->addAlunno($data->SIDI, $data->CF, $data->nome, $data->cognome, $data->telefono);
 $result = $conn->query($query);
 
 if ($result != false) {
