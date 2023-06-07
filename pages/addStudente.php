@@ -50,9 +50,14 @@ session_start();
                 required>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Telefono docente</label>
+            <label for="exampleFormControlInput1" class="form-label">Telefono studente</label>
             <input class="form-control" type="text" id="telefono" placeholder="telefono" name="telefono" maxlength="10"
                 required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Rischio</label>
+            <input class="form-control" type="text" onkeyup="this.value = this.value.toUpperCase();" id=" rischio"
+                placeholder="rischio" name="rischio" maxlength="2" required>
         </div>
         <button type="submit" class="btn btn-primary" name="login">Conferma</button>
 
@@ -83,6 +88,7 @@ session_start();
                 "nome" => $_POST['nome'],
                 "cognome" => $_POST['cognome'],
                 "telefono" => $_POST['telefono'],
+                "rischio" => $_POST['rischio'],
             );
             $response = addAlunno($data);
             if ($response == 1) {
