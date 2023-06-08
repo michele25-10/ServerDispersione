@@ -1,4 +1,5 @@
 <script>
+    //controllo sul login se non è stato effettuato si viene reindirizzati alla pagina del login
     if (sessionStorage.getItem('user_id') == undefined) {
         window.location.replace('https://dispersione.violamarchesini.it/');
     }
@@ -6,8 +7,7 @@
 
 
 <?php
-//error_reporting(0);
-
+//controlli che la pagina venga aperta con le giuste informazioni per evitare errori
 if (empty($_GET['type'])) {
     header('location: homepage.php');
 }
@@ -95,6 +95,7 @@ if (empty($_GET['type'])) {
     </div>
 
     <script>
+        //datatables funzione di ricerca e di filtraggio per colonna
         function filterGlobal() {
             $('#example')
                 .DataTable()
