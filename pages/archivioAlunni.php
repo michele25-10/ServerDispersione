@@ -79,6 +79,7 @@ session_start();
         </div>
     </div>
 
+    <!--Modale che permette le modifiche degli alunni-->
     <div class=" modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -119,7 +120,8 @@ session_start();
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Rischio:</label>
-                            <input type="text" id="rischio" name="rischio" class="form-control"></input>
+                            <input type="number" min="0" max="5" id="rischio" name="rischio"
+                                class="form-control"></input>
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -131,6 +133,7 @@ session_start();
         </div>
 
         <script>
+        //Funzione che inserisce all'interno del form del modale le informazioni dell'alunno selezionato
         function onClick(CF) {
             let endpoint = 'https://dispersione.violamarchesini.it/API/alunno/getAlunnoByCF.php?CF=' + CF
             $.get(endpoint, function(data, status) {
@@ -187,6 +190,7 @@ session_start();
         </script>
 
         <?php
+        //funzione di update degli studenti
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($_POST['menu'] == "Classico") {
