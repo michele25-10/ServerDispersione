@@ -211,11 +211,11 @@ session_start();
 
             $res = updateAlunno($data);
 
-            if ($res == 1) {
-                echo '<script>window . location . replace(
+
+
+            echo '<script>window . location . replace(
             "https://dispersione.violamarchesini.it/pages/archivioAlunni.php"
             );</script>';
-            }
         }
         ?>
 
